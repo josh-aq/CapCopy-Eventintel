@@ -1,0 +1,9 @@
+<?php require_once __DIR__ . '/../../config/db.php'; require_role('client');
+$event_id=intval($_GET['id']??0);
+$ev=db()->prepare("SELECT * FROM events WHERE event_id=? AND user_id=?"); $ev->execute([$event_id,$_SESSION['user_id']]); $event=$ev->fetch(); if(!$event) die('Not found');
+if($_SERVER['REQUEST_METHOD']==='POST'){
+ $qr='EI-'.$event_id.'-'.strtoupper(bin2hex(random_bytes(4)));
+ db()->prepare("INSERT INTO guests(event_id,name,email,phone,qr_code) VALUES(?,?,?,?,?)")->execute([$event_id,$_POST['name'],$_POST['email'],$_POST['phone'],$qr]);
+}
+$guests=db()->prepare("SELECT * FROM guests WHERE event_id=?"); $guests->execute([$event_id]); $guests=$guests->fetchAll();
+?><!DOCTYPE html><html><head><title>Guests</title><style>body{background:#050505;color:white;font-family:Segoe UI;padding:30px}.card{background:#111;border:1px solid rgba(255,215,0,.2);border-radius:20px;padding:20px;margin:15px 0}input{padding:12px;border-radius:10px;background:#181818;color:white;border:1px solid #333}.btn{padding:12px 16px;border-radius:10px;background:#f3c547;border:0;font-weight:700}</style></head><body><a style="color:#f3c547" href="yourevents.php">← Events</a><h1>Guest QR Management - <?=esc($event['title'])?></h1><form class="card" method="POST"><input name="name" placeholder="Guest name" required><input name="email" placeholder="Email"><input name="phone" placeholder="Phone"><button class="btn">Add Guest + Generate QR</button></form><a class="btn" href="scanner.php?id=<?=$event_id?>">Open QR Scanner</a><?php foreach($guests as $g): ?><div class="card"><b><?=esc($g['name'])?></b><p>QR: <?=esc($g['qr_code'])?></p><p>Status: <?=$g['attended']?'Attended':'Not yet scanned'?></p></div><?php endforeach; ?></body></html>

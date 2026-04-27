@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETTINGS</title>
+    <link rel="stylesheet" href="../css/supplier.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h1><span class="blue-text">Event</span><span class="pink-text">Intel</span></h1>
+                <div class="user-info">
+                    <strong>Alvin John Jabla</strong>
+                    <span class="supplier"><i class="fas fa-circle"></i> Supplier</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><button onclick="location.href='DASHBOARD.html'">DASHBOARD</button></li>
+                    <li><button onclick="location.href='BOOKINGS.html'">BOOKINGS</button></li>
+                    <li><button onclick="location.href='SERVICES.html'">SERVICES</button></li>
+                    <li><button onclick="location.href='MESSAGES.html'">MESSAGES</button></li>
+                    <li><button onclick="location.href='REVIEWS.html'">REVIEWS</button></li>
+                    <li class="active"><button onclick="location.href='SETTINGS.html'">SETTINGS</button></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+            <main class="main-content">
+            <div id="header"></div>
+
+<section class="settings-page">
+                    <h2>Settings</h2>
+
+                    <div class="settings-grid">
+
+                        <div class="setting-card">
+                            <h3>Profile Information</h3>
+                            <input type="text" placeholder="Full Name">
+                            <input type="email" placeholder="Email Address">
+                            <input type="text" placeholder="Business Name">
+                            <button>Save Changes</button>
+                        </div>
+
+                        <div class="setting-card">
+                            <h3>Change Password</h3>
+                            <input type="password" placeholder="Current Password">
+                            <input type="password" placeholder="New Password">
+                            <input type="password" placeholder="Confirm Password">
+                            <button>Update Password</button>
+                        </div>
+
+                        <div class="setting-card">
+                            <h3>Notification Settings</h3>
+                            <label><input type="checkbox"> Booking Alerts</label>
+                            <label><input type="checkbox"> Messages</label>
+                            <label><input type="checkbox"> Promotions</label>
+                            <button>Save Preferences</button>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+    </div>
+    <script src="../js/header.js"></script>
+</body>
+</html>
