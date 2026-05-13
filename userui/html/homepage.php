@@ -18,8 +18,8 @@
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-      background: #050505;
-      color: white;
+      background: #ffffff;
+      color: #111;
       position: relative;
     }
 
@@ -66,6 +66,7 @@
       align-items: center;
       position: relative;
       z-index: 3;
+      backdrop-filter: blur(10px);
     }
 
     .logo {
@@ -84,18 +85,21 @@
     .nav-links button {
       padding: 8px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
+      border: 1px solid rgba(255,255,255,0.75);
       background: transparent;
-      color: white;
+      color: #444;
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s ease;
+      border: 1px solid rgba(212,160,23,0.35);
+      background: rgba(255,255,255,0.55);
+      color: #222;
     }
 
     .nav-links button:hover,
     .nav-links .active {
-      background: rgba(255, 215, 0, 0.12);
-      color: #f3c547;
+      background: linear-gradient(to right, #ffe17a, #d4a017);
+      color: black;
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.12);
     }
 
@@ -104,7 +108,7 @@
       height: 44px;
       border-radius: 50%;
       border: 1px solid rgba(255, 215, 0, 0.35);
-      background: #111;
+      background: #f5f5f5;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -148,6 +152,7 @@
       line-height: 1.1;
       font-weight: 900;
       max-width: 780px;
+      color: #1a1a1a;
     }
 
     .hero h1 span {
@@ -160,7 +165,7 @@
     .hero p {
       margin-top: 18px;
       font-size: 16px;
-      color: #cccccc;
+      color: #444444;
       max-width: 680px;
       line-height: 1.5;
     }
@@ -176,8 +181,8 @@
       height: 72px;
       border-radius: 18px;
       border: 2px solid #d4a017;
-      background: rgba(20, 20, 20, 0.95);
-      color: #f3c547;
+      background: rgba(255, 255, 255, 0.95);
+      color: #b8860b;
       font-size: 18px;
       font-weight: 700;
       cursor: pointer;
@@ -209,17 +214,15 @@
       display: flex;
       overflow: hidden;
       z-index: 0;
-      opacity: 0.28;
-      filter: brightness(0.65) saturate(0.9);
+      opacity: 0.38;
+      filter: brightness(0.95) saturate(1);
     }
 
     .event-gallery::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center,
-        rgba(0,0,0,0.35) 0%,
-        rgba(0,0,0,0.75) 100%);
+      background: rgba(255,255,255,0.35);
       z-index: 2;
       pointer-events: none;
     }
@@ -235,9 +238,11 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center,
-        rgba(0,0,0,0) 45%,
-        rgba(0,0,0,0.55) 100%);
+      background: linear-gradient(
+          to top,
+          rgba(255,255,255,0.30),
+          rgba(255,255,255,0.05)
+        );
       z-index: 1;
     }
 
@@ -245,7 +250,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.65) contrast(1.15) saturate(0.85);
+      filter: brightness(1) contrast(1.05) saturate(0.9);
       transform: scale(1.05);
     }
 
@@ -253,7 +258,7 @@
       position: side;
       top: 20px;
       right: 200px;
-      color: #f3c547;
+      color: #c99700;
       font-size: 14px;
       z-index: 10;
     }

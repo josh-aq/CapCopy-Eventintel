@@ -133,6 +133,35 @@
       gap: 12px;
     }
 
+
+    .msg {
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .3s ease;
+    }
+
+    .msg {
+      background: linear-gradient(135deg, #fff2ab, #f3c547, #c99208);
+      color: #111;
+      text-decoration: none;
+    }
+
+
+    .msg {
+      background: transparent;
+      border: 1px solid rgba(255,215,0,.3);
+      color: #f3c547;
+    }
+
+    .msg {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(243,197,71,.2);
+    }
+
+
     .btn {
       padding: 12px;
       border-radius: 12px;
@@ -145,7 +174,9 @@
     .btn-primary {
       background: linear-gradient(135deg, #fff2ab, #f3c547, #c99208);
       color: #111;
+      text-decoration: none;
     }
+
 
     .btn-outline {
       background: transparent;
@@ -231,7 +262,7 @@
 
     <div class="action-buttons">
       <button class="btn btn-primary">Book Now</button>
-      <button class="btn btn-outline">Message</button>
+       <a class = "msg" href="message.php" class="select-btn">Message</a>
     </div>
   </div>
 
