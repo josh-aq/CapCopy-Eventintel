@@ -15,8 +15,8 @@
     }
 
     body {
-      background: #050505;
-      color: white;
+      background: #f8f8f8;
+      color: #111;
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
@@ -34,7 +34,7 @@
     body::before {
       width: 420px;
       height: 420px;
-      background: rgba(243,197,71,0.08);
+      background: rgba(243,197,71,0.10);
       top: -140px;
       left: -120px;
     }
@@ -42,7 +42,7 @@
     body::after {
       width: 560px;
       height: 560px;
-      background: rgba(243,197,71,0.05);
+      background: rgba(243,197,71,0.07);
       bottom: -220px;
       right: -180px;
     }
@@ -52,7 +52,7 @@
       inset: 0;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      opacity: 0.12;
+      opacity: 0.22;
       z-index: 0;
     }
 
@@ -60,14 +60,19 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.35) blur(3px);
+      filter: brightness(1) blur(2px);
     }
 
     .background-strip::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(5,5,5,.94), rgba(5,5,5,.68), rgba(5,5,5,.96));
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,.90),
+        rgba(255,255,255,.68),
+        rgba(255,255,255,.94)
+      );
     }
 
     .container {
@@ -89,7 +94,7 @@
     .logo {
       font-size: 26px;
       font-weight: 800;
-      color: #f3c547;
+      color: #d4a017;
       letter-spacing: 1px;
     }
 
@@ -102,9 +107,9 @@
     .nav-links button {
       padding: 8px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      background: transparent;
-      color: white;
+      border: 1px solid rgba(212,160,23,0.18);
+      background: rgba(255,255,255,0.75);
+      color: #222;
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s ease;
@@ -112,21 +117,21 @@
 
     .nav-links button:hover,
     .nav-links .active {
-      background: rgba(255, 215, 0, 0.12);
-      color: #f3c547;
-      box-shadow: 0 0 14px rgba(255, 215, 0, 0.12);
+      background: linear-gradient(to right,#ffe17a,#d4a017);
+      color: #111;
+      box-shadow: 0 0 14px rgba(255,215,0,0.16);
     }
 
     .profile-btn {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 215, 0, 0.35);
-      background: #111;
+      border: 1px solid rgba(212,160,23,0.22);
+      background: rgba(255,255,255,0.82);
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #f3c547;
+      color: #d4a017;
       cursor: pointer;
     }
 
@@ -141,11 +146,12 @@
       font-size: 56px;
       font-weight: 900;
       margin-bottom: 12px;
+      color: #111;
     }
 
     .hero p {
       max-width: 700px;
-      color: #a5a5a5;
+      color: #666;
       line-height: 1.7;
     }
 
@@ -158,9 +164,9 @@
       width: 100%;
       padding: 16px 18px 16px 50px;
       border-radius: 18px;
-      border: 1px solid rgba(255,215,0,0.15);
-      background: rgba(18,18,18,.88);
-      color: white;
+      border: 1px solid rgba(212,160,23,0.14);
+      background: rgba(255,255,255,0.82);
+      color: #111;
       outline: none;
       font-size: 14px;
     }
@@ -170,7 +176,7 @@
       top: 50%;
       left: 18px;
       transform: translateY(-50%);
-      color: #f3c547;
+      color: #d4a017;
     }
 
     .coordinator-grid {
@@ -180,18 +186,18 @@
     }
 
     .coordinator-card {
-      background: rgba(15,15,15,.9);
-      border: 1px solid rgba(255,215,0,.12);
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(212,160,23,.14);
       border-radius: 30px;
       overflow: hidden;
       transition: .35s ease;
-      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,.08);
       backdrop-filter: blur(16px);
     }
 
     .coordinator-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(255,215,0,.3);
+      border-color: rgba(212,160,23,.3);
       box-shadow: 0 24px 50px rgba(243,197,71,.12);
     }
 
@@ -205,20 +211,20 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(.75);
+      filter: brightness(.95);
       transition: .35s ease;
     }
 
     .coordinator-card:hover .coordinator-image img {
       transform: scale(1.05);
-      filter: brightness(.9);
+      filter: brightness(1);
     }
 
     .coordinator-image::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(5,5,5,.92), rgba(5,5,5,.08));
+      background: linear-gradient(to top, rgba(255,255,255,.90), rgba(255,255,255,.08));
     }
 
     .badge {
@@ -230,7 +236,7 @@
       border-radius: 999px;
       background: rgba(243,197,71,.14);
       border: 1px solid rgba(243,197,71,.25);
-      color: #f3c547;
+      color: #d4a017;
       font-size: 12px;
       font-weight: 700;
     }
@@ -242,12 +248,13 @@
     .coordinator-content h3 {
       font-size: 24px;
       margin-bottom: 10px;
+      color: #111;
     }
 
     .details {
       display: flex;
       gap: 18px;
-      color: #c0c0c0;
+      color: #666;
       font-size: 14px;
       margin-bottom: 16px;
     }
@@ -259,7 +266,7 @@
     }
 
     .coordinator-content p {
-      color: #9f9f9f;
+      color: #777;
       line-height: 1.6;
       margin-bottom: 20px;
       min-height: 72px;
@@ -272,7 +279,7 @@
     }
 
     .price {
-      color: #f3c547;
+      color: #d4a017;
       font-size: 22px;
       font-weight: 800;
     }

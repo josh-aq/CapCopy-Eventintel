@@ -15,8 +15,8 @@
 }
 
 body{
-  background:#050505;
-  color:white;
+  background:#f8f8f8;
+  color:#111;
   min-height:100vh;
 }
 
@@ -32,7 +32,7 @@ body{
 .logo-text {
   font-size: 26px;
   font-weight: 800;
-  color: #f3c547;
+  color: #d4a017;
 }
 
 .nav-links {
@@ -44,31 +44,31 @@ body{
 .nav-links button {
   padding: 8px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  background: transparent;
-  color: white;
+  border: 1px solid rgba(212,160,23,0.18);
+  background: rgba(255,255,255,0.78);
+  color: #222;
   cursor: pointer;
 }
 
 .nav-links button:hover,
 .nav-links .active {
-  background: rgba(255, 215, 0, 0.12);
-  color: #f3c547;
+  background: linear-gradient(to right,#ffe17a,#d4a017);
+  color: #111;
 }
 
 .profile-btn {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 215, 0, 0.35);
-  background: #111;
+  border: 1px solid rgba(212,160,23,0.22);
+  background: rgba(255,255,255,0.82);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .profile-btn i {
-  color: #f3c547;
+  color: #d4a017;
 }
 
 /* HEADER */
@@ -79,10 +79,11 @@ body{
 h1{
   font-size: 42px;
   margin-bottom: 10px;
+  color:#111;
 }
 
 .subtitle{
-  color:#aaa;
+  color:#666;
   margin-bottom:30px;
 }
 
@@ -95,16 +96,17 @@ h1{
 
 /* CARD */
 .card{
-  background:#0f0f0f;
-  border:1px solid rgba(255,215,0,.1);
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(212,160,23,.12);
   border-radius:20px;
   overflow:hidden;
   transition:.3s;
+  box-shadow:0 12px 28px rgba(0,0,0,.06);
 }
 
 .card:hover{
   transform:translateY(-6px);
-  border-color:rgba(255,215,0,.3);
+  border-color:rgba(212,160,23,.3);
   box-shadow:0 15px 35px rgba(243,197,71,.15);
 }
 
@@ -113,7 +115,7 @@ h1{
   height:240px;
   object-fit:cover;
   object-position: 0% 15%;
-  filter:brightness(.75);
+  filter:brightness(.95);
 }
 
 .card-content{
@@ -123,11 +125,12 @@ h1{
 .card-content h3{
   font-size:16px;
   margin-bottom:6px;
+  color:#111;
 }
 
 .card-content p{
   font-size:13px;
-  color:#bbb;
+  color:#666;
   margin-bottom:10px;
 }
 
@@ -137,7 +140,7 @@ h1{
   padding:5px 10px;
   border-radius:999px;
   background:rgba(255,215,0,.1);
-  color:#f3c547;
+  color:#d4a017;
   font-size:11px;
   margin-bottom:10px;
 }
@@ -164,9 +167,9 @@ h1{
 }
 
 .btn-outline{
-  background:transparent;
-  border:1px solid rgba(255,215,0,.3);
-  color:#f3c547;
+  background:rgba(255,255,255,0.78);
+  border:1px solid rgba(212,160,23,.2);
+  color:#d4a017;
 }
 
 </style>

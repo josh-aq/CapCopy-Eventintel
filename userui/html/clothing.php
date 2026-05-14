@@ -15,8 +15,8 @@
     }
 
     body {
-      background: #050505;
-      color: white;
+      background: #f8f8f8;
+      color: #111111;
       min-height: 100vh;
       overflow-x: hidden;
       position: relative;
@@ -34,7 +34,7 @@
     body::before {
       width: 450px;
       height: 450px;
-      background: rgba(255, 196, 0, 0.08);
+      background: rgba(255, 196, 0, 0.10);
       top: -160px;
       left: -120px;
     }
@@ -42,7 +42,7 @@
     body::after {
       width: 550px;
       height: 550px;
-      background: rgba(255, 215, 0, 0.05);
+      background: rgba(255, 215, 0, 0.07);
       bottom: -220px;
       right: -180px;
     }
@@ -52,7 +52,7 @@
       inset: 0;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      opacity: 0.12;
+      opacity: 0.24;
       z-index: 0;
     }
 
@@ -60,14 +60,19 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.4) blur(3px);
+      filter: brightness(1) blur(2px);
     }
 
     .background-strip::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(5,5,5,.92), rgba(5,5,5,.65), rgba(5,5,5,.95));
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,.88),
+        rgba(255,255,255,.60),
+        rgba(255,255,255,.92)
+      );
     }
 
     .container {
@@ -94,12 +99,10 @@
       gap: 0;
     }
 
-    
-
     .logo-text {
       font-size: 26px;
       font-weight: 800;
-      color: #f3c547;
+      color: #d4a017;
       letter-spacing: 1px;
     }
 
@@ -112,9 +115,9 @@
     .nav-links button {
       padding: 8px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      background: transparent;
-      color: white;
+      border: 1px solid rgba(212,160,23,0.18);
+      background: rgba(255,255,255,0.72);
+      color: #222;
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s ease;
@@ -122,17 +125,17 @@
 
     .nav-links button:hover,
     .nav-links .active {
-      background: rgba(255, 215, 0, 0.12);
-      color: #f3c547;
-      box-shadow: 0 0 14px rgba(255, 215, 0, 0.12);
+      background: linear-gradient(to right, #ffe17a, #d4a017);
+      color: #111;
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.18);
     }
 
     .profile-btn {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 215, 0, 0.35);
-      background: #111;
+      border: 1px solid rgba(212,160,23,0.22);
+      background: rgba(255,255,255,0.75);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -141,12 +144,12 @@
     }
 
     .profile-btn:hover {
-      background: rgba(255, 215, 0, 0.12);
+      background: rgba(255,255,255,0.95);
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.18);
     }
 
     .profile-btn i {
-      color: #f3c547;
+      color: #d4a017;
       font-size: 18px;
     }
 
@@ -158,11 +161,12 @@
       font-size: 56px;
       font-weight: 900;
       margin-bottom: 12px;
+      color: #111;
     }
 
     .hero p {
       max-width: 700px;
-      color: #a8a8a8;
+      color: #666666;
       line-height: 1.7;
       font-size: 15px;
     }
@@ -175,19 +179,19 @@
     }
 
     .clothing-card {
-      background: rgba(16,16,16,0.88);
-      border: 1px solid rgba(255,215,0,0.12);
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(212,160,23,0.14);
       border-radius: 28px;
       overflow: hidden;
       backdrop-filter: blur(16px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
       transition: 0.35s ease;
       position: relative;
     }
 
     .clothing-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(255,215,0,0.3);
+      border-color: rgba(212,160,23,0.3);
       box-shadow: 0 24px 50px rgba(243,197,71,0.12);
     }
 
@@ -201,20 +205,24 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.75);
+      filter: brightness(0.95);
       transition: 0.35s ease;
     }
 
     .clothing-card:hover .clothing-image img {
       transform: scale(1.05);
-      filter: brightness(0.9);
+      filter: brightness(1);
     }
 
     .clothing-image::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(5,5,5,.95), rgba(5,5,5,.1));
+      background: linear-gradient(
+        to top,
+        rgba(255,255,255,.92),
+        rgba(255,255,255,.08)
+      );
     }
 
     .tag {
@@ -226,10 +234,9 @@
       border-radius: 999px;
       background: rgba(243,197,71,.14);
       border: 1px solid rgba(243,197,71,.25);
-      color: #f3c547;
+      color: #d4a017;
       font-size: 12px;
       font-weight: 700;
-      backdrop-filter: blur(12px);
     }
 
     .clothing-content {
@@ -239,10 +246,11 @@
     .clothing-content h3 {
       font-size: 24px;
       margin-bottom: 12px;
+      color: #111;
     }
 
     .clothing-content p {
-      color: #a0a0a0;
+      color: #666666;
       line-height: 1.6;
       margin-bottom: 18px;
       min-height: 70px;
@@ -255,7 +263,7 @@
     }
 
     .price {
-      color: #f3c547;
+      color: #d4a017;
       font-size: 22px;
       font-weight: 800;
     }

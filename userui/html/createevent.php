@@ -16,20 +16,21 @@
     }
 
     :root {
-      --bg: #050505;
-      --panel: rgba(15,15,15,0.82);
-      --panel-2: rgba(22,22,22,0.88);
-      --gold: #f3c547;
-      --gold-soft: rgba(243,197,71,0.14);
-      --border: rgba(243,197,71,0.14);
-      --text: #f5f5f5;
-      --muted: #a9a9a9;
+      --bg: #f8f8f8;
+      --panel: rgba(255,255,255,0.78);
+      --panel-2: rgba(255,255,255,0.88);
+      --gold: #d4a017;
+      --gold-soft: rgba(212,160,23,0.12);
+      --border: rgba(212,160,23,0.14);
+      --text: #111111;
+      --muted: #666666;
     }
 
     body {
-      background: radial-gradient(circle at top left, rgba(243,197,71,0.08), transparent 28%),
-                  radial-gradient(circle at bottom right, rgba(243,197,71,0.06), transparent 32%),
-                  var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(243,197,71,0.12), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(243,197,71,0.08), transparent 32%),
+        var(--bg);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
@@ -42,8 +43,8 @@
       position: fixed;
       inset: 0;
       background:
-        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
       pointer-events: none;
@@ -55,7 +56,7 @@
       inset: 0;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      opacity: 0.18;
+      opacity: 0.28;
       z-index: 0;
       overflow: hidden;
     }
@@ -64,7 +65,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: blur(3px) brightness(0.45) saturate(0.8);
+      filter: blur(2px) brightness(1) saturate(0.9);
       transform: scale(1.08);
     }
 
@@ -72,7 +73,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(5,5,5,0.92), rgba(5,5,5,0.58) 35%, rgba(5,5,5,0.95));
+      background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.82),
+        rgba(255,255,255,0.55) 35%,
+        rgba(255,255,255,0.88)
+      );
     }
 
     .container {
@@ -100,62 +106,55 @@
       gap: 8px;
       font-size: 26px;
       font-weight: 800;
-      color: #f3c547;
+      color: var(--gold);
       letter-spacing: 1px;
-      background: none;
-      -webkit-text-fill-color: initial;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 18px;
-      background: transparent;
-      border: none;
-      padding: 0;
-      box-shadow: none;
-      backdrop-filter: none;
     }
 
     .nav-links button {
       padding: 8px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      background: transparent;
-      color: white;
+      border: 1px solid rgba(212,160,23,0.18);
+      background: rgba(255,255,255,0.65);
+      color: #222;
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s ease;
       font-weight: 500;
+      backdrop-filter: blur(10px);
     }
 
     .nav-links button:hover,
     .nav-links .active {
-      background: rgba(255, 215, 0, 0.12);
-      color: #f3c547;
-      box-shadow: 0 0 14px rgba(255, 215, 0, 0.12);
-      border-color: rgba(255, 215, 0, 0.3);
+      background: linear-gradient(to right, #ffe17a, #d4a017);
+      color: #111;
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.18);
     }
 
     .profile-btn {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 215, 0, 0.35);
-      background: #111;
+      border: 1px solid rgba(212,160,23,0.25);
+      background: rgba(255,255,255,0.75);
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
       transition: 0.3s ease;
-      color: #f3c547;
+      color: var(--gold);
       font-size: 18px;
+      backdrop-filter: blur(10px);
     }
 
     .profile-btn:hover {
-      background: rgba(255, 215, 0, 0.12);
+      background: rgba(255,255,255,0.95);
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.18);
-      transform: none;
     }
 
     .hero-bar {
@@ -177,6 +176,7 @@
       font-size: 56px;
       line-height: 1;
       font-weight: 900;
+      color: #111;
     }
 
     .hero-text p {
@@ -199,7 +199,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.65);
       border: 1px solid var(--border);
       color: var(--muted);
       backdrop-filter: blur(14px);
@@ -228,11 +228,11 @@
     .card {
       position: relative;
       background: var(--panel);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(212,160,23,0.12);
       border-radius: 30px;
       padding: 28px;
       backdrop-filter: blur(22px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
       overflow: hidden;
     }
 
@@ -270,8 +270,8 @@
       gap: 14px;
       padding: 18px;
       border-radius: 20px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(0,0,0,0.06);
       transition: .3s ease;
       cursor: pointer;
     }
@@ -292,6 +292,7 @@
     .event-option span {
       font-size: 15px;
       font-weight: 600;
+      color: #111;
     }
 
     .other-input,
@@ -299,9 +300,9 @@
       width: 100%;
       padding: 16px 18px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: white;
+      background: rgba(255,255,255,0.68);
+      border: 1px solid rgba(0,0,0,0.06);
+      color: #111;
       outline: none;
       transition: .3s ease;
     }
@@ -314,7 +315,7 @@
     .field input:focus {
       border-color: rgba(243,197,71,0.45);
       box-shadow: 0 0 0 4px rgba(243,197,71,0.08);
-      background: rgba(243,197,71,0.04);
+      background: rgba(255,255,255,0.95);
     }
 
     .schedule-grid {
@@ -349,14 +350,14 @@
       padding: 18px 20px;
       border-radius: 22px;
       background: var(--panel-2);
-      border: 1px solid rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,0,0,0.06);
       transition: .3s ease;
     }
 
     .service-row:hover {
       transform: translateX(6px);
       border-color: rgba(243,197,71,0.25);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.28);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
     }
 
     .service-name {
@@ -365,6 +366,7 @@
       gap: 14px;
       font-weight: 600;
       font-size: 16px;
+      color: #111;
     }
 
     .service-name i {
@@ -388,7 +390,7 @@
       border: none;
       padding: 12px 20px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.7);
       color: var(--gold);
       font-weight: 700;
       cursor: pointer;
@@ -400,17 +402,24 @@
       color: #111;
     }
 
-    .service-check{width:42px;height:42px;border-radius:14px;accent-color:var(--gold);cursor:pointer;}
+    .service-check {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+
     .status {
       width: 42px;
       height: 42px;
       border-radius: 14px;
-      background: rgba(40,140,70,0.18);
-      color: #6ff29d;
+      background: rgba(40,140,70,0.12);
+      color: #2fa45e;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(111,242,157,0.18);
+      border: 1px solid rgba(40,140,70,0.12);
     }
 
     .footer-actions {
@@ -432,9 +441,9 @@
     }
 
     .cancel-btn {
-      background: rgba(255,255,255,0.05);
-      color: #d0d0d0;
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.05);
+      color: #222;
+      border: 1px solid rgba(0,0,0,0.08);
     }
 
     .create-btn {

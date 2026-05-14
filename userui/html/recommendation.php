@@ -30,7 +30,7 @@ body::after {
 body::before {
   width: 420px;
   height: 420px;
-  background: rgba(255, 196, 0, 0.08);
+  background: rgba(255, 196, 0, 0.10);
   top: -140px;
   left: -120px;
 }
@@ -39,32 +39,16 @@ body::before {
 body::after {
   width: 520px;
   height: 520px;
-  background: rgba(255, 215, 0, 0.06);
+  background: rgba(255, 215, 0, 0.08);
   bottom: -200px;
   right: -140px;
 }
-.container{
-  display:grid;
-  grid-template-columns: 52% 48%; /* better visual balance */
-  height: calc(100vh - 80px);
-  position: relative;
-  z-index: 1;
-}
-.left::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.45)
-  );
-}
+
 body{
-  background:#050505;
-  color:white;
+  background:#ffffff;
+  color:#222;
   height:100vh;
-  overflow:hidden; /* 🔥 prevents page scrolling */
+  overflow:hidden;
 }
 
 /* NAVBAR */
@@ -91,10 +75,11 @@ body{
 .nav-links button {
   padding: 8px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  background: transparent;
-  color: white;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  background: #fff;
+  color: #444;
   cursor: pointer;
+  transition:.3s;
 }
 
 .nav-links button:hover,
@@ -107,8 +92,8 @@ body{
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 215, 0, 0.35);
-  background: #111;
+  border: 1px solid rgba(255, 215, 0, 0.30);
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,11 +107,13 @@ body{
 .container{
   display:grid;
   grid-template-columns: 52% 48%;
-  height: calc(100vh - 80px); /* fits under navbar */
-  overflow:hidden; /* prevents overflow from pushing page */
+  height: calc(100vh - 80px);
+  overflow:hidden;
+  position: relative;
+  z-index: 1;
 }
 
-/* LEFT IMAGE FIXED LAYOUT */
+/* LEFT IMAGE */
 .left{
   position: relative;
   height: 100%;
@@ -136,46 +123,46 @@ body{
   border-bottom-right-radius: 30px;
 }
 
-/* ACTUAL IMAGE */
 .left::before{
   content: "";
   position: absolute;
   inset: 0;
   background: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80') center center / cover no-repeat;
-  transform: scale(1.05); /* slight zoom for premium look */
+  transform: scale(1.05);
 }
 
-/* DARK + GRADIENT OVERLAY */
 .left::after{
   content:'';
   position:absolute;
   inset:0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.85) 0%,
-    rgba(0,0,0,0.6) 50%,
-    rgba(0,0,0,0.3) 100%
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.60) 50%,
+    rgba(255,255,255,0.20) 100%
   );
 }
 
 /* RIGHT PANEL */
 .right{
   padding:40px 60px;
-  overflow-y:auto; /* ✅ only this scrolls */
+  overflow-y:auto;
   height:100%;
 }
 
-/* optional: smoother scroll */
 .right::-webkit-scrollbar{
   width:6px;
 }
+
 .right::-webkit-scrollbar-thumb{
-  background:rgba(255,215,0,0.3);
+  background:rgba(255,215,0,0.35);
   border-radius:10px;
 }
+
 h1{
   font-size:42px;
   margin-bottom:20px;
+  color:#111;
 }
 
 /* INPUTS */
@@ -191,7 +178,7 @@ h1{
 
 .input label{
   font-size:12px;
-  color:#aaa;
+  color:#777;
 }
 
 .input input{
@@ -199,9 +186,9 @@ h1{
   padding:12px;
   margin-top:6px;
   border-radius:10px;
-  border:none;
-  background:#1a1a1a;
-  color:white;
+  border:1px solid rgba(255,215,0,.15);
+  background:#fff;
+  color:#222;
 }
 
 /* SERVICES */
@@ -218,18 +205,20 @@ h1{
   align-items:center;
   padding:14px 18px;
   border-radius:14px;
-  background:#111;
-  border:1px solid rgba(255,215,0,.1);
+  background:#fff;
+  border:1px solid rgba(255,215,0,.12);
   cursor:pointer;
   transition:.3s;
+  color:#222;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);
 }
 
 .service:hover{
-  border-color:rgba(255,215,0,.3);
+  border-color:rgba(255,215,0,.35);
 }
 
 .service.active{
-  background:linear-gradient(135deg,#2a1a00,#111);
+  background:linear-gradient(135deg,#fff7dc,#ffffff);
   border-color:#f3c547;
 }
 
@@ -268,6 +257,7 @@ h1{
 
 .generate:hover{
   transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(243,197,71,.25);
 }
 
 /* RESULT BOX */
@@ -275,16 +265,17 @@ h1{
   margin-top:25px;
   padding:20px;
   border-radius:16px;
-  background:#0f0f0f;
-  border:1px solid rgba(255,215,0,.2);
+  background:#fff;
+  border:1px solid rgba(255,215,0,.18);
   display:none;
+  color:#222;
+  box-shadow:0 6px 18px rgba(0,0,0,.05);
 }
 
 .result h3{
   margin-bottom:10px;
   color:#f3c547;
 }
-
 </style>
 </head>
 <body>

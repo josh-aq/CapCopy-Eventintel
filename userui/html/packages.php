@@ -15,8 +15,8 @@
 }
 
 body{
-  background:#050505;
-  color:white;
+  background:#ffffff;
+  color:#222;
   min-height:100vh;
 }
 
@@ -45,8 +45,8 @@ body{
   padding: 8px 18px;
   border-radius: 12px;
   border: 1px solid rgba(255, 215, 0, 0.3);
-  background: transparent;
-  color: white;
+  background: #fff;
+  color: #444;
   cursor: pointer;
 }
 
@@ -61,7 +61,7 @@ body{
   height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255, 215, 0, 0.35);
-  background: #111;
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@ h1{
 }
 
 .subtitle{
-  color:#aaa;
+  color:#777;
   margin-bottom:30px;
 }
 
@@ -96,14 +96,15 @@ h1{
 }
 
 .card{
-  background:#0f0f0f;
-  border:1px solid rgba(255,215,0,.1);
+  background:#ffffff;
+  border:1px solid rgba(255,215,0,.12);
   border-radius:20px;
   padding:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   transition:.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
 .card:hover{
@@ -135,11 +136,12 @@ h1{
   margin-top:30px;
   padding:20px;
   border-radius:20px;
-  background:#111;
+  background:#ffffff;
   border:1px solid rgba(255,215,0,.2);
   display:flex;
   justify-content:space-between;
   align-items:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.05);
 }
 
 .total{

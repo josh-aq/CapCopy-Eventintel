@@ -16,8 +16,8 @@
     }
 
     body {
-      background: #050505;
-      color: white;
+      background: #ffffff;
+      color: #222;
       min-height: 100vh;
     }
 
@@ -39,7 +39,7 @@
     .logo {
       font-size: 26px;
       font-weight: 800;
-      color: #f3c547;
+      color: #d4a017;
       letter-spacing: 1px;
     }
 
@@ -52,9 +52,9 @@
     .nav-links button {
       padding: 8px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      background: transparent;
-      color: white;
+      border: 1px solid rgba(212,160,23,0.25);
+      background: #fff;
+      color: #444;
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s ease;
@@ -62,21 +62,21 @@
 
     .nav-links button:hover,
     .nav-links .active {
-      background: rgba(255, 215, 0, 0.12);
-      color: #f3c547;
-      box-shadow: 0 0 14px rgba(255, 215, 0, 0.12);
+      background: rgba(255, 215, 0, 0.10);
+      color: #d4a017;
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.10);
     }
 
     .profile-btn {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 215, 0, 0.35);
-      background: #111;
+      border: 1px solid rgba(212,160,23,0.25);
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #f3c547;
+      color: #d4a017;
       cursor: pointer;
     }
 
@@ -89,11 +89,12 @@
     }
 
     .profile-card {
-      background: rgba(15,15,15,.95);
-      border: 1px solid rgba(255,215,0,.12);
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(212,160,23,.12);
       border-radius: 28px;
       padding: 30px;
       text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
     }
 
     .profile-img {
@@ -103,7 +104,7 @@
       overflow: hidden;
       margin: auto;
       margin-bottom: 18px;
-      border: 2px solid rgba(255,215,0,.3);
+      border: 2px solid rgba(212,160,23,.25);
     }
 
     .profile-img img {
@@ -114,16 +115,17 @@
 
     .profile-card h2 {
       margin-bottom: 8px;
+      color: #111;
     }
 
     .role {
-      color: #f3c547;
+      color: #d4a017;
       font-size: 14px;
       margin-bottom: 14px;
     }
 
     .rating {
-      color: #f3c547;
+      color: #d4a017;
       margin-bottom: 20px;
     }
 
@@ -133,60 +135,35 @@
       gap: 12px;
     }
 
-
-    .msg {
-      padding: 12px;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
-      transition: .3s ease;
-    }
-
-    .msg {
-      background: linear-gradient(135deg, #fff2ab, #f3c547, #c99208);
-      color: #111;
-      text-decoration: none;
-    }
-
-
-    .msg {
-      background: transparent;
-      border: 1px solid rgba(255,215,0,.3);
-      color: #f3c547;
-    }
-
-    .msg {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(243,197,71,.2);
-    }
-
-
+    .msg,
     .btn {
       padding: 12px;
       border-radius: 12px;
-      border: none;
       cursor: pointer;
       font-weight: 700;
       transition: .3s ease;
+      text-align: center;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #fff2ab, #f3c547, #c99208);
-      color: #111;
+      background: linear-gradient(135deg, #ffe27a, #d4a017, #b8860b);
+      color: white;
+      border: none;
       text-decoration: none;
     }
 
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(255,215,0,.3);
-      color: #f3c547;
+    .btn-outline,
+    .msg {
+      background: #fff;
+      border: 1px solid rgba(212,160,23,.25);
+      color: #d4a017;
+      text-decoration: none;
     }
 
-    .btn:hover {
+    .btn:hover,
+    .msg:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(243,197,71,.2);
+      box-shadow: 0 8px 18px rgba(243,197,71,.18);
     }
 
     /* DETAILS */
@@ -197,19 +174,21 @@
     }
 
     .section {
-      background: rgba(15,15,15,.9);
-      border: 1px solid rgba(255,215,0,.12);
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(212,160,23,.12);
       border-radius: 28px;
       padding: 26px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
     }
 
     .section h3 {
       margin-bottom: 12px;
       font-size: 20px;
+      color: #111;
     }
 
     .section p {
-      color: #cfcfcf;
+      color: #666;
       line-height: 1.6;
     }
 
@@ -222,9 +201,10 @@
     .service {
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(255,215,0,.1);
-      color: #f3c547;
+      background: rgba(243,197,71,.12);
+      color: #d4a017;
       font-size: 13px;
+      border: 1px solid rgba(212,160,23,.15);
     }
 
   </style>

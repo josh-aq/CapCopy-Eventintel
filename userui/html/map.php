@@ -20,8 +20,8 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
     }
 
     body {
-      background: #050505;
-      color: white;
+      background: #ffffff;
+      color: #222;
       min-height: 100vh;
     }
 
@@ -31,7 +31,7 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
       padding: 6px 48px 30px;
     }
 
-    /* NAVBAR (same as your system) */
+    /* NAVBAR */
     .navbar {
       width: 100%;
       padding: 6px 0 24px;
@@ -43,7 +43,7 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
     .logo {
       font-size: 26px;
       font-weight: 800;
-      color: #f3c547;
+      color: #d4a017;
       letter-spacing: 1px;
     }
 
@@ -56,9 +56,9 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
     .nav-links button {
       padding: 8px 18px;
       border-radius: 12px;
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      background: transparent;
-      color: white;
+      border: 1px solid rgba(212,160,23,0.25);
+      background: #fff;
+      color: #444;
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s ease;
@@ -66,21 +66,21 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
 
     .nav-links button:hover,
     .nav-links .active {
-      background: rgba(255, 215, 0, 0.12);
-      color: #f3c547;
-      box-shadow: 0 0 14px rgba(255, 215, 0, 0.12);
+      background: rgba(255, 215, 0, 0.10);
+      color: #d4a017;
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.10);
     }
 
     .profile-btn {
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 215, 0, 0.35);
-      background: #111;
+      border: 1px solid rgba(212,160,23,0.25);
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #f3c547;
+      color: #d4a017;
       cursor: pointer;
     }
 
@@ -97,35 +97,38 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
       height: 600px;
       border-radius: 28px;
       overflow: hidden;
-      border: 1px solid rgba(255,215,0,.12);
-      background: #111;
+      border: 1px solid rgba(212,160,23,.12);
+      background: #f8f8f8;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
-      filter: grayscale(1) contrast(1.2) brightness(.8);
+      filter: grayscale(.2) contrast(1.05) brightness(1);
     }
 
     /* SIDE INFO */
     .info-card {
-      background: rgba(15,15,15,.9);
-      border: 1px solid rgba(255,215,0,.12);
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(212,160,23,.12);
       border-radius: 28px;
       padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
     }
 
     .info-card h2 {
       font-size: 30px;
       margin-bottom: 10px;
+      color: #111;
     }
 
     .info-card p {
-      color: #bdbdbd;
+      color: #666;
       line-height: 1.6;
       margin-bottom: 20px;
     }
@@ -141,12 +144,12 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
       display: flex;
       align-items: center;
       gap: 10px;
-      color: #d6d6d6;
+      color: #555;
       font-size: 14px;
     }
 
     .location-details i {
-      color: #f3c547;
+      color: #d4a017;
     }
 
     .action-buttons {
@@ -165,19 +168,19 @@ if($event_id){$st=db()->prepare("SELECT * FROM events WHERE event_id=?");$st->ex
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #fff2ab, #f3c547, #c99208);
-      color: #111;
+      background: linear-gradient(135deg, #ffe27a, #d4a017, #b8860b);
+      color: white;
     }
 
     .btn-outline {
-      background: transparent;
-      color: #f3c547;
-      border: 1px solid rgba(255,215,0,.3);
+      background: #fff;
+      color: #d4a017;
+      border: 1px solid rgba(212,160,23,.25);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(243,197,71,.2);
+      box-shadow: 0 8px 18px rgba(243,197,71,.18);
     }
 
   </style>

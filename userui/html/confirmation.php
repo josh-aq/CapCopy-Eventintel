@@ -6,153 +6,156 @@
 <title>EventIntel - Booking Confirmed</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI',sans-serif;
+    }
 
-body{
-  background:#050505;
-  color:white;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-}
+    body{
+      background:#f8f8f8;
+      color:#111;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
 
-/* NAVBAR */
-.navbar { 
-  width: 100%;
-  padding: 18px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* NAVBAR */
+    .navbar { 
+      width: 100%;
+      padding: 18px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.logo-text {
-  font-size: 26px;
-  font-weight: 800;
-  color: #f3c547;
-}
+    .logo-text {
+      font-size: 26px;
+      font-weight: 800;
+      color: #d4a017;
+    }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
 
-.nav-links button {
-  padding: 8px 18px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  background: transparent;
-  color: white;
-  cursor: pointer;
-}
+    .nav-links button {
+      padding: 8px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(212,160,23,0.18);
+      background: rgba(255,255,255,0.75);
+      color: #222;
+      cursor: pointer;
+    }
 
-.nav-links button:hover,
-.nav-links .active {
-  background: rgba(255, 215, 0, 0.12);
-  color: #f3c547;
-}
+    .nav-links button:hover,
+    .nav-links .active {
+      background: linear-gradient(to right,#ffe17a,#d4a017);
+      color: #111;
+    }
 
-.profile-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 215, 0, 0.35);
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .profile-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,160,23,0.22);
+      background: rgba(255,255,255,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.profile-btn i {
-  color: #f3c547;
-}
+    .profile-btn i {
+      color: #d4a017;
+    }
 
-/* MAIN */
-.container{
-  flex:1;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
+    /* MAIN */
+    .container{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
 
-/* CONFIRMATION CARD */
-.card{
-  background:#0f0f0f;
-  border:1px solid rgba(255,215,0,.15);
-  border-radius:30px;
-  padding:50px;
-  text-align:center;
-  max-width:600px;
-  width:100%;
-  box-shadow:0 20px 50px rgba(255,215,0,.1);
-}
+    /* CONFIRMATION CARD */
+    .card{
+      background:rgba(255,255,255,0.82);
+      border:1px solid rgba(212,160,23,.14);
+      border-radius:30px;
+      padding:50px;
+      text-align:center;
+      max-width:600px;
+      width:100%;
+      box-shadow:0 20px 50px rgba(0,0,0,.08);
+      backdrop-filter:blur(14px);
+    }
 
-/* ICON */
-.success-icon{
-  width:90px;
-  height:90px;
-  margin:auto;
-  border-radius:50%;
-  background:linear-gradient(135deg,#fff2ab,#f3c547,#c99208);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:40px;
-  color:#111;
-  margin-bottom:20px;
-}
+    /* ICON */
+    .success-icon{
+      width:90px;
+      height:90px;
+      margin:auto;
+      border-radius:50%;
+      background:linear-gradient(135deg,#fff2ab,#f3c547,#c99208);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:40px;
+      color:#111;
+      margin-bottom:20px;
+    }
 
-/* TEXT */
-.card h1{
-  font-size:32px;
-  margin-bottom:10px;
-}
+    /* TEXT */
+    .card h1{
+      font-size:32px;
+      margin-bottom:10px;
+      color:#111;
+    }
 
-.card p{
-  color:#bbb;
-  margin-bottom:25px;
-  line-height:1.5;
-}
+    .card p{
+      color:#666;
+      margin-bottom:25px;
+      line-height:1.5;
+    }
 
-/* BUTTONS */
-.actions{
-  display:flex;
-  gap:15px;
-  justify-content:center;
-}
+    /* BUTTONS */
+    .actions{
+      display:flex;
+      gap:15px;
+      justify-content:center;
+    }
 
-.btn{
-  padding:12px 22px;
-  border-radius:12px;
-  font-weight:700;
-  cursor:pointer;
-  border:none;
-}
+    .btn{
+      padding:12px 22px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+      border:none;
+      transition:.3s ease;
+    }
 
-.btn-primary{
-  background:linear-gradient(135deg,#fff2ab,#f3c547,#c99208);
-  color:#111;
-}
+    .btn-primary{
+      background:linear-gradient(135deg,#fff2ab,#f3c547,#c99208);
+      color:#111;
+    }
 
-.btn-outline{
-  background:transparent;
-  border:1px solid rgba(255,215,0,.3);
-  color:#f3c547;
-}
+    .btn-outline{
+      background:rgba(255,255,255,0.75);
+      border:1px solid rgba(212,160,23,.2);
+      color:#d4a017;
+    }
 
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 20px rgba(255,215,0,.2);
-}
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(243,197,71,.2);
+    }
 
-</style>
+  </style>
 </head>
 <body>
 
