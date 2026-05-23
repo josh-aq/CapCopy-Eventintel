@@ -21,7 +21,7 @@
         <div class="right-section">
             <div class="login-form-container">
                 <h2 class="welcome-title">Create Account</h2>
-                
+
                 <form class="login-form">
                     <!-- Name Fields -->
                     <div class="form-row">
@@ -120,19 +120,9 @@
                         </div>
                     </div>
 
-                    <!-- Role Selection -->
-                    <div class="role-section">
-                        <p class="section-title">Account Type</p>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="role" value="coordinator" class="checkbox-input">
-                                <span class="checkbox-text"><i class="fas fa-clipboard-list"></i> Sign Up as Coordinator</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="role" value="supplier" class="checkbox-input">
-                                <span class="checkbox-text"><i class="fas fa-box"></i> Sign Up as Supplier</span>
-                            </label>
-                        </div>
+                    <input type="hidden" name="role" value="client">
+                    <div class="info-box" style="margin:18px 0;padding:16px;border-radius:16px;background:rgba(243,197,71,0.12);border:1px solid rgba(243,197,71,0.2);color:#111;">
+                        <strong>Note:</strong> You are creating a client account. Supplier and coordinator applications are available later from your profile after login.
                     </div>
 
                     <!-- Passwords -->

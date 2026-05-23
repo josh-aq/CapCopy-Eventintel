@@ -36,7 +36,7 @@ function esc($v) {
                 <?php if ($message): ?>
                 <div style="padding:12px;margin-bottom:15px;border-radius:12px;background:<?=$error ? '#3d1f1f' : '#1f3d1f'?>;border:1px solid <?=$error ? '#c53030' : '#38a169'?>;color:<?=$error ? '#fc8181' : '#9ae6b4'?>"><?=esc($message)?></div>
                 <?php endif; ?>
-                
+
                 <form class="login-form" action="../auth/register.php" method="POST" enctype="multipart/form-data">
                     <!-- Name Fields -->
                     <div class="form-row">
@@ -135,37 +135,9 @@ function esc($v) {
                         </div>
                     </div>
 
-                    <!-- Role Selection -->
-                    <div class="role-section">
-                        <p class="section-title">Account Type</p>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="radio" name="role" value="coordinator" class="checkbox-input">
-                                <span class="checkbox-text"><i class="fas fa-clipboard-list"></i> Sign Up as Coordinator</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="radio" name="role" value="supplier" class="checkbox-input">
-                                <span class="checkbox-text"><i class="fas fa-box"></i> Sign Up as Supplier</span>
-                            </label>
-                        </div>
-                        <label class="checkbox-label">
-                            <input type="radio" name="role" value="client" class="checkbox-input" checked>
-                            <span class="checkbox-text"><i class="fas fa-user"></i> Sign Up as Client</span>
-                        </label>
-                    </div>
-
-                    <div id="verificationFields" style="display:none; margin:15px 0; padding:14px; border:1px solid rgba(255,215,0,.25); border-radius:14px;">
-                        <p class="section-title">Supplier/Coordinator Verification</p>
-                        <div class="form-group"><div class="input-wrapper"><i class="icon fas fa-building"></i><input type="text" name="business_name" placeholder="Business / Organization Name" class="input-field"></div></div>
-                        <div class="form-group"><div class="input-wrapper"><i class="icon fas fa-location-dot"></i><input type="text" name="business_address" placeholder="Business Address" class="input-field"></div></div>
-                        <p style="font-size:12px;color:#aaa;margin:8px 0;">Upload Valid ID</p><input type="file" name="valid_id" accept="image/*,.pdf" class="input-field">
-                        <p style="font-size:12px;color:#aaa;margin:8px 0;">Upload Business Permit</p><input type="file" name="business_permit" accept="image/*,.pdf" class="input-field">
-                        <p style="font-size:12px;color:#f3c547;margin:12px 0;">Live Face Scan for admin comparison with ID</p>
-                        <video id="faceVideo" autoplay playsinline style="width:100%;max-height:220px;border-radius:14px;background:#111;"></video>
-                        <canvas id="faceCanvas" width="360" height="250" style="display:none;"></canvas>
-                        <input type="hidden" name="face_capture" id="face_capture">
-                        <button type="button" class="login-button" style="margin-top:10px;" onclick="captureFace()">Capture Face</button>
-                        <p id="faceStatus" style="font-size:12px;color:#aaa;text-align:center;margin-top:6px;">Camera will open when Supplier/Coordinator is selected.</p>
+                    <input type="hidden" name="role" value="client">
+                    <div class="info-box" style="margin:18px 0;padding:16px;border-radius:16px;background:rgba(243,197,71,0.12);border:1px solid rgba(243,197,71,0.2);color:#111;">
+                        <strong>Note:</strong> You are creating a client account. Supplier and coordinator applications are available later from your profile after login.
                     </div>
 
                     <!-- Passwords -->
@@ -209,26 +181,7 @@ function esc($v) {
                 icon.classList.add('fa-eye');
             }
         }
-    
-        document.querySelectorAll('input[name="role"]').forEach(r=>{
-            r.addEventListener('change',()=>{
-                const isVerify = r.value !== 'client' && r.checked;
-                document.getElementById('verificationFields').style.display = isVerify ? 'block':'none';
-                if(isVerify) startFaceCamera();
-            });
-        });
-        async function startFaceCamera(){
-            try{
-                const stream = await navigator.mediaDevices.getUserMedia({video:true});
-                document.getElementById('faceVideo').srcObject = stream;
-            }catch(e){ document.getElementById('faceStatus').textContent = 'Camera unavailable. Admin may request manual verification.'; }
-        }
-        function captureFace(){
-            const v=document.getElementById('faceVideo'), c=document.getElementById('faceCanvas');
-            c.getContext('2d').drawImage(v,0,0,c.width,c.height);
-            document.getElementById('face_capture').value = c.toDataURL('image/png');
-            document.getElementById('faceStatus').textContent = 'Face captured for admin verification.';
-        }
+
     </script>
 </body>
 </html>

@@ -12,12 +12,11 @@ $username = trim($_POST['username'] ?? ($_POST['email'] ?? ''));
 $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
 $confirm = $_POST['confirm_password'] ?? $password;
-$role = $_POST['role'] ?? 'client';
-if (!in_array($role, ['client', 'supplier', 'coordinator'], true)) $role = 'client';
+$role = 'client';
 
 $full = trim($first . ' ' . $mi . ' ' . $last);
 if ($full === '') $full = $username;
-$status = ($role === 'client') ? 'approved' : 'pending';
+$status = 'approved';
 
 $age = ($_POST['age'] ?? '') !== '' ? intval($_POST['age']) : null;
 $gender = trim($_POST['gender'] ?? '');

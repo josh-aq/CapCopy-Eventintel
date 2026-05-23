@@ -422,6 +422,36 @@
       border: 1px solid rgba(40,140,70,0.12);
     }
 
+    .hidden-step {
+      opacity: 0.4;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: all 0.3s ease;
+    }
+
+    .step-indicator {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .step-pill {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.80);
+      color: #111;
+      font-weight: 700;
+      letter-spacing: .4px;
+      transition: .3s ease;
+    }
+
+    .step-pill.active {
+      background: linear-gradient(135deg, #ffe27d, #c78f08);
+      color: #111;
+      box-shadow: 0 0 16px rgba(243,197,71,.18);
+    }
+
     .footer-actions {
       margin-top: auto;
       display: flex;
@@ -502,6 +532,11 @@
     </div>
 
     <h1>Create an Event</h1>
+    <div class="step-indicator">
+      <span class="step-pill active" data-step="1">1. Choose Event</span>
+      <span class="step-pill" data-step="2">2. Schedule</span>
+      <span class="step-pill" data-step="3">3. Services</span>
+    </div>
 
     <form action="save_event.php" method="POST">
     <div class="content">
@@ -522,7 +557,7 @@
           <input class="other-input" type="text" name="other_event_type" placeholder="Other event type...">
         </div>
 
-        <div class="card">
+        <div class="card schedule-card hidden-step">
           <div class="card-title">Schedule & Attendees</div>
 
           <div class="schedule-grid">
@@ -544,7 +579,7 @@
         </div>
       </div>
 
-      <div class="right-column">
+      <div class="right-column hidden-step" id="servicePanel">
         <div class="services">
           <div class="service-row" data-service="venue">
             <div class="service-name"><i class="fa-solid fa-location-dot"></i>Venue</div>
@@ -626,6 +661,47 @@ window.addEventListener('message', function(e) {
   }
 });
 
+function updateStep(step) {
+  document.querySelectorAll('.step-pill').forEach(function(pill) {
+    pill.classList.toggle('active', pill.dataset.step === String(step));
+  });
+}
+
+function showScheduleIfReady() {
+  const selectedEvent = document.querySelector('input[name="event_type"]:checked');
+  const scheduleCard = document.querySelector('.schedule-card');
+  const servicePanel = document.getElementById('servicePanel');
+  if (selectedEvent) {
+    scheduleCard.classList.remove('hidden-step');
+    servicePanel.classList.remove('hidden-step');
+    updateStep(2);
+  } else {
+    scheduleCard.classList.add('hidden-step');
+    servicePanel.classList.add('hidden-step');
+    updateStep(1);
+  }
+}
+
+document.querySelectorAll('input[name="event_type"]').forEach(function(input) {
+  input.addEventListener('change', function() {
+    updateStep(2);
+    showScheduleIfReady();
+  });
+});
+
+const scheduleInputs = document.querySelectorAll('.schedule-grid input');
+function checkScheduleComplete() {
+  const filled = Array.from(scheduleInputs).every(function(input) {
+    return input.value.trim() !== '';
+  });
+  if (filled) {
+    updateStep(3);
+  }
+}
+scheduleInputs.forEach(function(input) {
+  input.addEventListener('input', checkScheduleComplete);
+});
+
 // Check URL params for returned selections from redirect flow
 (function() {
   const params = new URLSearchParams(window.location.search);
@@ -640,6 +716,7 @@ window.addEventListener('message', function(e) {
       }
     });
   }
+  showScheduleIfReady();
 })();
 </script>
 </body>

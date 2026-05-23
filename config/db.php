@@ -33,22 +33,22 @@ function esc($v) {
 
 function app_base_url() {
     $script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
-    $parts = explode('/', trim($script, '/'));
-    return isset($parts[0]) && $parts[0] !== '' ? '/' . $parts[0] : '';
+    $dir = rtrim(dirname($script), '\/');
+    return $dir === '.' ? '' : $dir;
 }
 
 function redirect_to($path) {
     if ($path === '') $path = '/';
     if ($path[0] !== '/') $path = '/' . $path;
-    
+
     $url = app_base_url() . $path;
-    
+
     // Ensure no output has been sent before redirect
     if (!headers_sent()) {
         header('Location: ' . $url);
         exit;
     }
-    
+
     // Fallback if headers already sent
     echo '<script>window.location.href="' . esc($url) . '";</script>';
     echo '<noscript><meta http-equiv="refresh" content="0;url=' . esc($url) . '"></noscript>';
